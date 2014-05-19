@@ -8,7 +8,7 @@ public:
 	bool hasNextString();
 	void reset();
 	FizzBuzzer(int a_start = 1, int a_end = 100);
-private:
+//private:
 	int start;
 	int end;
 public:	int current;
