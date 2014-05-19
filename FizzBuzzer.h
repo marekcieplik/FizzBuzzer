@@ -11,5 +11,5 @@ public:
 private:
 	int start;
 	int end;
-	int current;
+public:	int current;
 };
