@@ -1,17 +1,13 @@
 #include "FizzBuzzerIs5Or3.h"
 #include <stdlib.h>
 std::string FizzBuzzerIs5Or3::getNextString() {
-<<<<<<< HEAD
 	std::string s = "";
-=======
-	std::string s;
->>>>>>> 1fc83578bbc3ba2409ecce6847a80c265cfc6aee
 	char buffer[100];
 
 	if      (!hasNextString()) s = "";
-	else if ((0 == (current % 3)) && (0 == (current % 5))) s = "FizzBuzz";
-	else if (0 == (current % 3)) s = "Fizz";
-	else if (0 == (current % 5)) s = "Buzz";
+	else if ((isThree(current)) && (isFive(current))) s = "FizzBuzz";
+	else if (isThree(current)) s = "Fizz";
+	else if (isFive(current)) s = "Buzz";
 	else { // s = std::to_string(current); // w C++11
 		itoa(current, buffer, 10);
 		s = std::string(buffer);
@@ -20,11 +16,7 @@ std::string FizzBuzzerIs5Or3::getNextString() {
 	current++;
 	return s;
 }
-<<<<<<< HEAD
 FizzBuzzerIs5Or3::FizzBuzzerIs5Or3(int a_start, int a_end ) : FizzBuzzer(a_start,a_end)
-=======
-FizzBuzzerIs5Or3::FizzBuzzerIs5Or3() : FizzBuzzer::FizzBuzzer(int a_start = 1, int a_end = 100)
->>>>>>> 1fc83578bbc3ba2409ecce6847a80c265cfc6aee
 {
     //ctor
 }
@@ -32,4 +24,31 @@ FizzBuzzerIs5Or3::FizzBuzzerIs5Or3() : FizzBuzzer::FizzBuzzer(int a_start = 1, i
 FizzBuzzerIs5Or3::~FizzBuzzerIs5Or3()
 {
     //dtor
+}
+//private
+bool FizzBuzzerIs5Or3::isThree(int n)
+{   //source from http://p22.symfony.gajdaw.pl/rozdzial/cyfry_liczb.html
+    int robn = n;
+    int ostatniacyfra = n % 10;
+    while(robn)
+    {
+        if ( ostatniacyfra == 3 ) return true;
+        robn /= 10;
+        ostatniacyfra = robn % 10;
+    }
+
+    return false;
+}
+bool FizzBuzzerIs5Or3::isFive(int n)
+{
+    int robn = n;
+    int ostatniacyfra = n % 10;
+    while(robn)
+    {
+        if (ostatniacyfra == 5 ) return true;
+        robn /= 10;
+        ostatniacyfra = robn % 10;
+    }
+
+    return false;
 }

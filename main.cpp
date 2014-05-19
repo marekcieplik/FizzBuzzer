@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	//FizzBuzzerIs5Or3 f(1,15);
-    FizzBuzzerIs5Or3 f(1,15);
+    FizzBuzzerIs5Or3 f(1,33);
 	while (f.hasNextString()){
 		cout << f.getNextString() << endl;
 	}
