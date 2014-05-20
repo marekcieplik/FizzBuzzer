@@ -1,8 +1,8 @@
 #pragma once
+#include "IFizzBuzzer.h"
+//#include <string>
 
-#include <string>
-
-class FizzBuzzer {
+class FizzBuzzer : public IFizzBuzzer {
 public:
 	std::string getNextString();
 	bool hasNextString();
@@ -11,5 +11,5 @@ public:
 private:
 	int start;
 	int end;
-protected:	int current;
+	int current;
 };
